@@ -3,11 +3,28 @@ import React from 'react'
 
 const Blog = (props) => {
 
+    // const deleteBlogHandler = (id) => {
+        
+    // }
+
+    const clickHandler = (id) => {
+        // console.log("props", props) 
+        props.getBlogId(id)
+    }
+
     const renderBlogs = props.blog.map((data) => {
-        console.log(data)
+        // console.log(data)
+        console.log(data.id)
         return (
             // <BlogItem blog={data}></BlogItem>
-            <div>{data.text}</div>
+            <div>
+                
+                <i onClick={() => clickHandler(data.id)}>
+                {data.text}
+                </i>
+                </div>
+            // <div>{data.text}</div>
+
         )
     })
 

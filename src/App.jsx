@@ -15,6 +15,15 @@ function App() {
     setBlog([ ...blogs, {id: uuid(), ...blog}])
   }
 
+  const removeBlogsHandler = (id) => {
+    console.log("this is from inside remove" , id)
+      const newBlogList = blogs.filter((blog) => {
+        return blog.id !== id;
+      })
+
+      setBlog(newBlogList)
+  }
+
     // get the data from the local storage
     useEffect(() => {
       const retrivedBlogs = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
@@ -30,7 +39,8 @@ function App() {
     <div>
       <Header />
       <Body addBlogsHandler={addBlogsHandler}/>
-      <Blog blog={blogs} />
+      <Blog blog={blogs} getBlogId={removeBlogsHandler}/>
+      {/* <Blog blog={blogs}/> */}
     </div>
   );
 }
