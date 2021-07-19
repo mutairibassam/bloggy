@@ -3,28 +3,21 @@ import React from 'react'
 
 const Blog = (props) => {
 
-    // const deleteBlogHandler = (id) => {
-        
-    // }
-
+    // this function is used to pass the blog id, and fire a new function in the parent
+    // class and pass the id
     const clickHandler = (id) => {
-        // console.log("props", props) 
         props.getBlogId(id)
     }
 
     const renderBlogs = props.blog.map((data) => {
-        // console.log(data)
-        console.log(data.id)
         return (
-            // <BlogItem blog={data}></BlogItem>
             <div>
-                
+
+                {/* fire a new method called clickHandler and passing the id of the blog */}
                 <i onClick={() => clickHandler(data.id)}>
-                {data.text}
+                    {data.text}
                 </i>
                 </div>
-            // <div>{data.text}</div>
-
         )
     })
 

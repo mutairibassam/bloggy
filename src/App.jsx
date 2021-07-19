@@ -15,6 +15,8 @@ function App() {
     setBlog([ ...blogs, {id: uuid(), ...blog}])
   }
 
+  // this function takes the id as an arg, and generate a new list after removing
+  // the selected id
   const removeBlogsHandler = (id) => {
     console.log("this is from inside remove" , id)
       const newBlogList = blogs.filter((blog) => {
@@ -39,6 +41,10 @@ function App() {
     <div>
       <Header />
       <Body addBlogsHandler={addBlogsHandler}/>
+
+      {/* `getBlogId` gets the blog id form the child class and fire a new function
+        called `removeBlogsHandler`
+      */}
       <Blog blog={blogs} getBlogId={removeBlogsHandler}/>
       {/* <Blog blog={blogs}/> */}
     </div>
