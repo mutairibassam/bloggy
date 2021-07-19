@@ -7,7 +7,6 @@ import { uuid } from 'uuidv4'
 function App() {
 
   const LOCAL_STORAGE_KEY = "blogs"
-
   const [blogs, setBlog] = useState([])
 
   const addBlogsHandler = (blog) => {
@@ -43,10 +42,9 @@ function App() {
       <Body addBlogsHandler={addBlogsHandler}/>
 
       {/* `getBlogId` gets the blog id form the child class and fire a new function
-        called `removeBlogsHandler`
-      */}
+        called `removeBlogsHandler` */}
       <Blog blog={blogs} getBlogId={removeBlogsHandler}/>
-      {/* <Blog blog={blogs}/> */}
+
     </div>
   );
 }
