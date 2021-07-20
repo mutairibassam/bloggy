@@ -1,2 +1,3 @@
 # bloggy
-a collection of bloggy essays and anecdotes
+
+A collection of bloggy essays and anecdotes
